@@ -8,13 +8,12 @@
     "material-ui": "^0.18.7",
     "react": "^15.6.2",
     "react-burger-menu": "^2.1.4",
-    "react-dom": "^16.2.0",
+    "react-dom": "^15.6.1",
     "react-google-maps-loader": "^3.0.1",
     "react-google-places-suggest": "^2.1.1",
     "react-places-autocomplete": "^5.4.2",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.17",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
@@ -23,10 +22,14 @@
     "styled-components": "^2.1.1",
     "superagent": "^3.8.0"
   },
+  "devDependencies": {
+    "react-scripts": "1.0.10"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
