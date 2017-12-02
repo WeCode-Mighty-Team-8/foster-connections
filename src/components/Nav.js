@@ -31,7 +31,7 @@ class Nav extends Component {
         <Menu pageWrapId={'page-wrap'} outerContainerId={'outer-container'}>
           <Link to ='/'><NavItem>Home</NavItem></Link>
           <Link to ='/about'><NavItem>About</NavItem></Link>
-          <Link to ='/places'><NavItem>Places</NavItem></Link>
+          <Link to ='/resources'><NavItem>Resources</NavItem></Link>
           <Link to ='/families'><NavItem>Families</NavItem></Link>
           {user
             ? <Link to ='/login'><NavItem>My Account</NavItem></Link>
