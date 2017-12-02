@@ -1,19 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+import Main from './components/Main';
+import Nav from './components/Nav';
+import About from './components/About';
+import Login from './components/Login';
+import Families from './components/Families';
+import shopData from './data/data'; 
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      resources: shopData,
+      filteredLocations: [],
+      locationTypes: [],
+      user: false,
+      formSubmit: false
+    };
+  }
+
   render() {
+    const { user, resources } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div>
+          <Nav user={user} />
+          <main id='page-wrap'>
+            <Switch>
+              <Route exact path='/' render={() => <Main resources={resources}/>} />
+              <Route path='/about' render={() => <About />} />
+              <Route path='/places' render={() => <Main resources={resources}/>} />
+              <Route path='/families' render={() => <Families user={user}/>} />
+              <Route path='/login' render={() => <Login user={user}/>} />
+              <Redirect to='/' />
+            </Switch>
+          </main>
+        </div>
+      </Router>
     );
   }
 }
