@@ -32,6 +32,10 @@ font-size: .75em;
 @media (min-width: 1050px) {
   font-size: .85em;
 }
+
+@media screen and (max-width: 480px) {
+  height: 40vh;
+}
 `;
 
 const AboutTitle = styled.h2`
